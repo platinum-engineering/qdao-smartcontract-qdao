@@ -4,6 +4,9 @@
 
 #### [Official website](https://usdq.platinum.fund/) | [Telegram](https://t.me/Platinumq) | [Facebook](https://www.facebook.com/FundPlatinum) | [Medium](https://medium.com/platinum-fund)
 
+Q DAO Governance token by Platinum Engineering for USDQ, KRWQ, CNYQ, JPYQ stable coins
+
+
 ## Building the source
 
 Building project requires both a NodeJs (version 10.16 or later). Once the dependencies are installed, run
