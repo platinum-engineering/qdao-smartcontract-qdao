@@ -20,14 +20,9 @@ if(!thirdAddress){
     throw("ADDRESS_THIRD_OWNER is not configured in .env!");
 }
 
-const fourthAddress =  process.env.ADDRESS_FOURTH_OWNER;
-if(!fourthAddress){
-    throw("ADDRESS_FOURTH_OWNER is not configured in .env!");
-}
-
-const fifthAddress =  process.env.ADDRESS_FIFTH_OWNER;
-if(!fifthAddress){
-    throw("ADDRESS_FIFTH_OWNER is not configured in .env!");
+const governanceAddress =  process.env.ADDRESS_GOVERNANCE;
+if(!governanceAddress){
+    throw("ADDRESS_GOVERNANCE is not configured in .env!");
 }
 
 const wait = async (param) => {console.log("Delay " + paused); await delay(paused); return param;};
@@ -36,6 +31,6 @@ module.exports = function(deployer) {
     deployer.then(async () => {
         await wait();
 
-        await wait(await deployer.deploy(QDAO, firstAddress, secondAddress, thirdAddress, fourthAddress, fifthAddress));
+        await wait(await deployer.deploy(QDAO, firstAddress, secondAddress, thirdAddress, governanceAddress));
     });
 };
