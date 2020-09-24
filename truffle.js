@@ -37,18 +37,18 @@ module.exports = {
             gasPrice: gasPrice,
             gas: 6700000
         },
-        // rinkeby: {
-        //     provider: infuraProvider('rinkeby'),
-        //     network_id: 4, // eslint-disable-line camelcase
-        //     gasPrice: gasPrice,
-        //     gas: 6700000
-        // },
-        // live: {
-        //     provider: infuraProvider('mainnet'),
-        //     network_id: 1, // eslint-disable-line camelcase
-        //     gasPrice: gasPrice,
-        //     gas: 6700000
-        // }
+        rinkeby: {
+            provider: infuraProvider('rinkeby'),
+            network_id: 4, // eslint-disable-line camelcase
+            gasPrice: gasPrice,
+            gas: 6700000
+        },
+        live: {
+            provider: infuraProvider('mainnet'),
+            network_id: 1, // eslint-disable-line camelcase
+            gasPrice: gasPrice,
+            gas: 6700000
+        }
     },
     mocha: {
         reporter: 'eth-gas-reporter',
