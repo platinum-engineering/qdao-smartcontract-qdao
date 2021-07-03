@@ -11,7 +11,7 @@ const providerWithMnemonic = (mnemonic, rpcEndpoint) =>
 const infuraProvider = network => providerWithMnemonic(
     process.env.MNEMONIC_DEPLOY || '',
     network === 'rinkeby' ?
-        `https://${network}.infura.io/${process.env.INFURA_API_KEY}`
+        `https://${network}.infura.io/${process.env.INFURA_API_KEY}` : ''
 );
 
 const web3 = new Web3('');
@@ -24,6 +24,18 @@ module.exports = {
             port: 8545,
             gas: 6700000,
             network_id: '*', // eslint-disable-line camelcase
+        },
+        bscTestnet: {
+            provider: () => new HDWalletProvider(process.env.MNEMONIC_DEPLOY, 'https://data-seed-prebsc-1-s1.binance.org:8545'),
+            network_id: 97,
+            gasPrice: gasPrice,
+            gas: 6700000
+        },
+        bscMainnet: {
+            provider: () => new HDWalletProvider(process.env.MNEMONIC_DEPLOY, 'https://bsc-dataseed1.binance.org'),
+            network_id: 56,
+            gasPrice: gasPrice,
+            gas: 6700000
         },
         rinkeby: {
             provider: infuraProvider('rinkeby'),
